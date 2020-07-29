@@ -1,6 +1,15 @@
 --Part 1
 
+SELECT COLUMN_NAME,DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_SCHEMA = "techjobs"
+AND TABLE_NAME = "Jobs";
+
 --Part 2
+SELECT NAME FROM EMPLOYERS
+WHERE LOCATION = "Texas";
 
 --Part 3
-
+SELECT Skills.Name,Skills.Description
+FROM Skills 
+INNER JOIN JobSkills ON Skills.Id=JobSkills.SkillId
+ORDER BY Skills.Name;
